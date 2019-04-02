@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
-import { Text, View, Image  } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
 
 class Greeting extends Component {
   render() {
@@ -50,6 +61,10 @@ export default class HelloWorldApp extends Component {
         <Blink text='Yes blinking is so great' />
         <Blink text='Why did they ever take this out of HTML' />
         <Blink text='Look at me look at me look at me' />
+        <Text style={styles.red}>just red</Text>
+        <Text style={styles.bigBlue}>just bigBlue</Text>
+        <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
+        <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
       </View> 
     );
   }
